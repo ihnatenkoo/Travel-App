@@ -1,0 +1,25 @@
+.footer {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+
+  background-color: rgba(0, 0, 0, 0.4);
+
+  &__nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    span {
+      color: var(--gray);
+      transition: all 0.2s linear;
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+}

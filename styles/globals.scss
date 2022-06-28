@@ -1,0 +1,40 @@
+@import 'material-icons/iconfont/material-icons.scss';
+
+:root {
+  --accent: #eb601e;
+  --gray: #807e7f;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  background-color: #161617;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+}
