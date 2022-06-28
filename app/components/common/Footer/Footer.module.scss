@@ -13,11 +13,12 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    span {
+    .button {
       color: var(--gray);
       transition: all 0.2s linear;
 
-      &:hover {
+      &:hover,
+      &.active {
         color: var(--accent);
       }
     }

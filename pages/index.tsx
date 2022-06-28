@@ -1,13 +1,8 @@
 import type { NextPage } from 'next';
-import Footer from '../app/components/common/Footer/Footer';
-import styles from '../styles/Home.module.scss';
+import MainLayout from '../app/layouts/MainLayout';
 
 const Home: NextPage = () => {
-  return (
-    <div className={styles.container}>
-      <Footer />
-    </div>
-  );
+  return <MainLayout>Home</MainLayout>;
 };
 
 export default Home;

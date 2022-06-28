@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { FC } from 'react';
+import cn from 'classnames';
 
 import s from './Footer.module.scss';
 
@@ -11,14 +12,20 @@ const navItems = [
 ];
 
 const Footer: FC = () => {
-  const { push } = useRouter();
+  const { push, pathname } = useRouter();
 
   return (
     <footer className={s.footer}>
       <nav className={s.footer__nav}>
         {navItems.map((item) => {
           return (
-            <button onClick={() => push(item.link)} key={item.icon}>
+            <button
+              onClick={() => push(item.link)}
+              className={cn(s.button, {
+                [s.active]: pathname === item.link
+              })}
+              key={item.icon}
+            >
               <span className="material-icons-outlined">{item.icon}</span>
             </button>
           );
