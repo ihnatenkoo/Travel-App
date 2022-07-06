@@ -3,8 +3,12 @@ import { FC } from 'react';
 import cn from 'classnames';
 
 import s from './Footer.module.scss';
+interface INavItem {
+  icon: string;
+  link: string;
+}
 
-const navItems = [
+const navItems: Array<INavItem> = [
   { icon: 'home', link: '/' },
   { icon: 'explore', link: '/explore' },
   { icon: 'place', link: '/place' },
