@@ -1,0 +1,13 @@
+.section {
+  span {
+    z-index: -1;
+    img {
+      opacity: 0.3;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin: 50px 0 30px;
+  }
+}

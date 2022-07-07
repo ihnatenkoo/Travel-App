@@ -7,10 +7,10 @@ interface IMainLayout {
 
 const MainLayout: FC<IMainLayout> = ({ children }) => {
   return (
-    <>
+    <main className="main-container">
       {children}
       <Footer />
-    </>
+    </main>
   );
 };
 

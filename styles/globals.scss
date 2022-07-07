@@ -1,19 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,400;0,8..144,500;0,8..144,700;1,8..144,400&display=swap');
 @import 'material-icons/iconfont/material-icons.scss';
 
 :root {
   --accent: #eb601e;
   --gray: #807e7f;
+  --white: #e8e8e8;
 }
 
 html,
 body {
   padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  margin: 0 auto;
+  font-family: 'Roboto Serif', serif;
 
-  background-color: #161617;
-  color: #fff;
+  color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
 }
 
 a {
@@ -30,6 +38,7 @@ ul {
 }
 
 button {
+  color: inherit;
   cursor: pointer;
   background-color: transparent;
 }
@@ -38,4 +47,22 @@ input,
 button {
   outline: none;
   border: none;
+}
+
+.main-container {
+  margin: 0 auto;
+  width: 767px;
+  max-width: 100%;
+  height: 100vh;
+  background-color: #161617;
+
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  z-index: 1;
+}
+
+.material-icons-outlined {
+  z-index: 1 !important;
 }

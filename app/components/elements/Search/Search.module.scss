@@ -1,0 +1,28 @@
+.search {
+  position: relative;
+  margin-bottom: 20px;
+  height: 40px;
+
+  background-color: #333333;
+  border-radius: 12px;
+  overflow: hidden;
+
+  &__input {
+    padding: 12px 7px 12px 45px;
+    width: 100%;
+    background-color: inherit;
+    color: var(--white);
+    cursor: pointer;
+
+    &:focus {
+      background-color: #555454;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    left: 15px;
+    top: 8px;
+    cursor: pointer;
+  }
+}
