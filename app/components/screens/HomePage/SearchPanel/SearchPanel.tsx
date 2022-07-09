@@ -16,8 +16,10 @@ const SearchPanel: FC = () => {
         objectPosition="top"
         alt="world map background image"
       />
-      <Search />
-      <Filters />
+      <div className={s.section__inner}>
+        <Search />
+        <Filters />
+      </div>
     </section>
   );
 };

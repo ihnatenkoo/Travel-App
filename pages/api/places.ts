@@ -2,22 +2,50 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { IPlace } from '../../app/interfaces/place';
 
-import tokyoImg from '/public/images/japan.jpg';
-
 const places: Array<IPlace> = [
   {
-    name: 'Tokyo',
+    slug: 'tokyo',
+    location: {
+      city: 'Tokyo',
+      country: 'Japan'
+    },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 1550,
-    image: tokyoImg.src,
+    image: 'http://localhost:3000/images/places/japan.jpg',
+    rating: 8
+  },
+  {
+    slug: 'kyiv',
+    location: {
+      city: 'Kyiv',
+      country: 'Ukraine'
+    },
+    description: 'lorem lorem lorem lorem lorem lorem',
+    distance: 300,
+    image: 'http://localhost:3000/images/places/ukraine.jpg',
+    rating: 10
+  },
+  {
+    slug: 'new-york',
+    location: {
+      city: 'New York',
+      country: 'USA'
+    },
+    description: 'lorem lorem lorem lorem lorem lorem',
+    distance: 7200,
+    image: 'http://localhost:3000/images/places/usa.jpg',
     rating: 9
   },
   {
-    name: 'Kyiv',
+    slug: 'rome',
+    location: {
+      city: 'Rome',
+      country: 'Italy'
+    },
     description: 'lorem lorem lorem lorem lorem lorem',
-    distance: 500,
-    image: tokyoImg.src,
-    rating: 10
+    distance: 3350,
+    image: 'http://localhost:3000/images/places/italy.jpg',
+    rating: 8
   }
 ];
 

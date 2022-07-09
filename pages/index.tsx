@@ -1,5 +1,6 @@
 import { NextPage, GetStaticProps } from 'next';
 import { IPlace } from '../app/interfaces/place';
+import { API_URL } from '../app/constants';
 import MainLayout from '../app/layouts/MainLayout';
 import HomePage from '../app/components/screens/HomePage';
 
@@ -11,13 +12,13 @@ interface IHome {
 const Home: NextPage<IHome> = ({ places }) => {
   return (
     <MainLayout>
-      <HomePage />
+      <HomePage places={places} />
     </MainLayout>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await axios.get('http://localhost:3000//api/places');
+  const { data } = await axios.get(`${API_URL}/places`);
 
   return {
     props: {
