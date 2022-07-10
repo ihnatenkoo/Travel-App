@@ -4,17 +4,6 @@ import { IPlace } from '../../app/interfaces/place';
 
 const places: Array<IPlace> = [
   {
-    slug: 'tokyo',
-    location: {
-      city: 'Tokyo',
-      country: 'Japan'
-    },
-    description: 'lorem lorem lorem lorem lorem lorem',
-    distance: 1550,
-    image: 'http://localhost:3000/images/places/japan.jpg',
-    rating: 8
-  },
-  {
     slug: 'kyiv',
     location: {
       city: 'Kyiv',
@@ -22,8 +11,19 @@ const places: Array<IPlace> = [
     },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 300,
-    image: 'http://localhost:3000/images/places/ukraine.jpg',
+    image: 'http://localhost:3000/images/places/Ukraine/kyiv.jpg',
     rating: 10
+  },
+  {
+    slug: 'tokyo',
+    location: {
+      city: 'Tokyo',
+      country: 'Japan'
+    },
+    description: 'lorem lorem lorem lorem lorem lorem',
+    distance: 1550,
+    image: 'http://localhost:3000/images/places/Japan/tokyo.jpg',
+    rating: 8
   },
   {
     slug: 'new-york',
@@ -33,7 +33,7 @@ const places: Array<IPlace> = [
     },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 7200,
-    image: 'http://localhost:3000/images/places/usa.jpg',
+    image: 'http://localhost:3000/images/places/USA/new-york.jpg',
     rating: 9
   },
   {
@@ -44,7 +44,18 @@ const places: Array<IPlace> = [
     },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 3350,
-    image: 'http://localhost:3000/images/places/italy.jpg',
+    image: 'http://localhost:3000/images/places/Italy/rome.jpg',
+    rating: 8
+  },
+  {
+    slug: 'milan',
+    location: {
+      city: 'Milan',
+      country: 'Italy'
+    },
+    description: 'lorem lorem lorem lorem lorem lorem',
+    distance: 3350,
+    image: 'http://localhost:3000/images/places/Italy/milan.jpg',
     rating: 8
   }
 ];

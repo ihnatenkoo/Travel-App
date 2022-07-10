@@ -14,11 +14,15 @@ const PopularPlaces: FC<IPopularPlacesProps> = ({ places }) => {
     <section className={s.places}>
       <h2 className={s.places__title}>Popular places</h2>
       <div className={s.places__inner}>
+        {places.length === 0 && <div className={s.places__card}>NOT FOUND</div>}
+
         {places.map((place) => (
           <div key={place.slug} className={s.places__card}>
             <Link href={`places/${place.slug}`}>
               <a>
-                <Image src={place.image} alt={place.slug} layout="fill" objectFit="cover" />
+                <div className={s.places__card__image}>
+                  <Image src={place.image} alt={place.slug} layout="fill" objectFit="cover" />
+                </div>
               </a>
             </Link>
             <h3 className={s.places__card__title}>

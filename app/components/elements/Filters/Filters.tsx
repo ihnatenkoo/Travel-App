@@ -1,28 +1,56 @@
-import { FC, useState } from 'react';
+import { FC, useEffect } from 'react';
+import { TypeSetState } from '../../../interfaces/common';
+import { IPlace } from '../../../interfaces/place';
+
 import cn from 'classnames';
 import s from './Filters.module.scss';
 
-const cities = [
-  { location: 'Paris' },
-  { location: 'Rome' },
-  { location: 'Kyiv' },
-  { location: 'Prague' },
-  { location: 'New York' },
-  { location: 'Toronto' }
+const countries = [
+  { location: 'All' },
+  { location: 'Ukraine' },
+  { location: 'Italy' },
+  { location: 'Japan' },
+  { location: 'USA' },
+  { location: 'United Kingdom' }
 ];
+interface IFiltersProps {
+  setPlaces: TypeSetState<Array<IPlace>>;
+  initialPlaces: Array<IPlace>;
+  filter: string;
+  setFilter: TypeSetState<string>;
+  setSearchTerm: TypeSetState<string>;
+}
 
-const Filters: FC = () => {
-  const [filter, setFilter] = useState('');
+const Filters: FC<IFiltersProps> = ({
+  setPlaces,
+  initialPlaces,
+  filter,
+  setFilter,
+  setSearchTerm
+}) => {
+  useEffect(() => {
+    if (filter === 'All') {
+      setPlaces(initialPlaces);
+      return;
+    }
+    const places = initialPlaces.filter((elem) => elem.location.country === filter);
+    setPlaces(places);
+  }, [filter, initialPlaces, setPlaces]);
+
+  const clickHandler = (country: any) => {
+    setFilter(country.location);
+    setSearchTerm('');
+  };
 
   return (
     <div className={s.filters}>
-      {cities.map((city) => (
+      {countries.map((country) => (
         <button
-          onClick={() => setFilter(city.location)}
-          key={city.location}
-          className={cn({ [s.active]: city.location === filter })}
+          onClick={() => clickHandler(country)}
+          key={country.location}
+          className={cn({ [s.active]: country.location === filter })}
         >
-          {city.location}
+          {country.location}
         </button>
       ))}
     </div>

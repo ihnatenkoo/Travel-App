@@ -2,27 +2,32 @@ import { NextPage, GetStaticProps } from 'next';
 import { IPlace } from '../app/interfaces/place';
 import { API_URL } from '../app/constants';
 import MainLayout from '../app/layouts/MainLayout';
-import HomePage from '../app/components/screens/HomePage';
 
 import axios from 'axios';
+import SearchPanel from '../app/components/screens/HomePage/SearchPanel/SearchPanel';
+import PopularPlaces from '../app/components/screens/HomePage/PopularPlaces/PopularPlaces';
+import { useState } from 'react';
 interface IHome {
-  places: Array<IPlace>;
+  initialPlaces: Array<IPlace>;
 }
 
-const Home: NextPage<IHome> = ({ places }) => {
+const Home: NextPage<IHome> = ({ initialPlaces }) => {
+  const [places, setPlaces] = useState<Array<IPlace>>(initialPlaces);
+
   return (
     <MainLayout>
-      <HomePage places={places} />
+      <SearchPanel setPlaces={setPlaces} initialPlaces={initialPlaces} />
+      <PopularPlaces places={places} />
     </MainLayout>
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps = async () => {
   const { data } = await axios.get(`${API_URL}/places`);
 
   return {
     props: {
-      places: data
+      initialPlaces: data
     }
   };
 };
