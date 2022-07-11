@@ -16,7 +16,7 @@ const Home: NextPage<IHome> = ({ initialPlaces }) => {
 
   return (
     <MainLayout>
-      <SearchPanel setPlaces={setPlaces} initialPlaces={initialPlaces} />
+      <SearchPanel setPlaces={setPlaces} initialPlaces={initialPlaces} places={places} />
       <PopularPlaces places={places} />
     </MainLayout>
   );

@@ -8,11 +8,12 @@ import { TypeSetState } from '../../../../interfaces/common';
 import { IPlace } from '../../../../interfaces/place';
 
 interface ISearchPanelProps {
+  places: Array<IPlace>;
   setPlaces: TypeSetState<Array<IPlace>>;
   initialPlaces: Array<IPlace>;
 }
 
-const SearchPanel: FC<ISearchPanelProps> = ({ setPlaces, initialPlaces }) => {
+const SearchPanel: FC<ISearchPanelProps> = ({ setPlaces, initialPlaces, places }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('All');
 
@@ -33,6 +34,8 @@ const SearchPanel: FC<ISearchPanelProps> = ({ setPlaces, initialPlaces }) => {
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
           filter={filter}
+          setFilter={setFilter}
+          places={places}
         />
         <Filters
           setPlaces={setPlaces}
@@ -40,6 +43,7 @@ const SearchPanel: FC<ISearchPanelProps> = ({ setPlaces, initialPlaces }) => {
           filter={filter}
           setFilter={setFilter}
           setSearchTerm={setSearchTerm}
+          places={places}
         />
       </div>
     </section>

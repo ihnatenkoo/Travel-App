@@ -61,13 +61,13 @@ button {
   z-index: 1;
 }
 
-.material-icons-outlined {
-  z-index: 1 !important;
-}
-
 .content-container {
   margin: 0 auto;
   padding: 0 5px;
   width: 575px;
   max-width: 100%;
+}
+
+.material-icons-outlined {
+  z-index: 1 !important;
 }

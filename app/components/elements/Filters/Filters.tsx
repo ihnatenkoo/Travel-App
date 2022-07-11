@@ -14,6 +14,7 @@ const countries = [
   { location: 'United Kingdom' }
 ];
 interface IFiltersProps {
+  places: Array<IPlace>;
   setPlaces: TypeSetState<Array<IPlace>>;
   initialPlaces: Array<IPlace>;
   filter: string;
@@ -22,6 +23,7 @@ interface IFiltersProps {
 }
 
 const Filters: FC<IFiltersProps> = ({
+  places,
   setPlaces,
   initialPlaces,
   filter,

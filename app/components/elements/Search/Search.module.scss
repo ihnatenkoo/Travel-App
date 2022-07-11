@@ -21,8 +21,22 @@
 
   &__icon {
     position: absolute;
-    left: 15px;
     top: 8px;
     cursor: pointer;
+    user-select: none;
+
+    &.find {
+      left: 15px;
+    }
+
+    &.close {
+      opacity: 0;
+      right: 15px;
+      transition: all 0.15s linear;
+
+      &.active {
+        opacity: 1;
+      }
+    }
   }
 }

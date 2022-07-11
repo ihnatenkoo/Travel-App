@@ -5,34 +5,38 @@ import { IPlace } from '../../../interfaces/place';
 import cn from 'classnames';
 import s from './Search.module.scss';
 interface ISearchProps {
+  places: Array<IPlace>;
   setPlaces: TypeSetState<Array<IPlace>>;
   initialPlaces: Array<IPlace>;
   searchTerm: string;
   filter: string;
   setSearchTerm: TypeSetState<string>;
+  setFilter: TypeSetState<string>;
 }
 
 const Search: FC<ISearchProps> = ({
+  places,
   setPlaces,
   initialPlaces,
   filter,
+  setFilter,
   searchTerm,
   setSearchTerm
 }) => {
   const searchHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setSearchTerm(value);
+    setSearchTerm(e.target.value);
+    const lowerCaseValue = e.target.value.toLowerCase();
 
     const places = initialPlaces.filter((elem) => {
       if (filter === 'All') {
         return (
-          elem.location.city.toLowerCase().includes(value) ||
-          elem.location.country.toLowerCase().includes(value)
+          elem.location.city.toLowerCase().includes(lowerCaseValue) ||
+          elem.location.country.toLowerCase().includes(lowerCaseValue)
         );
       } else {
         return (
-          (elem.location.city.toLowerCase().includes(value) ||
-            elem.location.country.toLowerCase().includes(value)) &&
+          (elem.location.city.toLowerCase().includes(lowerCaseValue) ||
+            elem.location.country.toLowerCase().includes(lowerCaseValue)) &&
           elem.location.country === filter
         );
       }
@@ -41,9 +45,22 @@ const Search: FC<ISearchProps> = ({
     setPlaces(places);
   };
 
+  const clearSearchButtonHandler = () => {
+    setSearchTerm('');
+    setPlaces(places);
+  };
+
   return (
     <div className={s.search}>
-      <span className={cn('material-icons-outlined', s.search__icon)}>search</span>
+      <span className={cn('material-icons-outlined', s.search__icon, s.find)}>search</span>
+      <span
+        className={cn('material-icons-outlined', s.search__icon, s.close, {
+          [s.active]: searchTerm
+        })}
+        onClick={clearSearchButtonHandler}
+      >
+        close
+      </span>
 
       <input
         type="text"
