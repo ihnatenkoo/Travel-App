@@ -4,7 +4,7 @@ import { IPlace } from '../../app/interfaces/place';
 
 const places: Array<IPlace> = [
   {
-    slug: 'kyiv',
+    name: 'kyiv',
     location: {
       city: 'Kyiv',
       country: 'Ukraine'
@@ -15,7 +15,7 @@ const places: Array<IPlace> = [
     rating: 10
   },
   {
-    slug: 'tokyo',
+    name: 'tokyo',
     location: {
       city: 'Tokyo',
       country: 'Japan'
@@ -26,7 +26,7 @@ const places: Array<IPlace> = [
     rating: 8
   },
   {
-    slug: 'new-york',
+    name: 'new-york',
     location: {
       city: 'New York',
       country: 'USA'
@@ -37,7 +37,7 @@ const places: Array<IPlace> = [
     rating: 9
   },
   {
-    slug: 'rome',
+    name: 'rome',
     location: {
       city: 'Rome',
       country: 'Italy'
@@ -48,7 +48,7 @@ const places: Array<IPlace> = [
     rating: 8
   },
   {
-    slug: 'milan',
+    name: 'milan',
     location: {
       city: 'Milan',
       country: 'Italy'

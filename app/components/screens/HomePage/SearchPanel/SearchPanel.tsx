@@ -1,28 +1,21 @@
 import { ChangeEvent, FC, useEffect, useState } from 'react';
 import Image from 'next/image';
-import { TypeSetState } from '../../../../interfaces/common';
+import { IFiltersPopularCountries, TypeSetState } from '../../../../interfaces/common';
 import { IPlace } from '../../../../interfaces/place';
 
 import s from './SearchPanel.module.scss';
 import cn from 'classnames';
 interface ISearchPanelProps {
-  setPlaces: TypeSetState<Array<IPlace>>;
   initialPlaces: Array<IPlace>;
-}
-interface ICountry {
-  location: string;
+  filtersPopularCountries: Array<IFiltersPopularCountries>;
+  setPlaces: TypeSetState<Array<IPlace>>;
 }
 
-const filtersPopularCountries = [
-  { location: 'All' },
-  { location: 'Ukraine' },
-  { location: 'Italy' },
-  { location: 'Japan' },
-  { location: 'USA' },
-  { location: 'United Kingdom' }
-];
-
-const SearchPanel: FC<ISearchPanelProps> = ({ setPlaces, initialPlaces }) => {
+const SearchPanel: FC<ISearchPanelProps> = ({
+  setPlaces,
+  initialPlaces,
+  filtersPopularCountries
+}) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('All');
 
@@ -62,7 +55,7 @@ const SearchPanel: FC<ISearchPanelProps> = ({ setPlaces, initialPlaces }) => {
     setPlaces(places);
   };
 
-  const changeFilterHandler = (country: ICountry) => {
+  const changeFilterHandler = (country: IFiltersPopularCountries) => {
     setFilter(country.location);
     setSearchTerm('');
   };

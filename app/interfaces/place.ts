@@ -1,5 +1,5 @@
 export interface IPlace {
-  slug: string;
+  name: string;
   location: TypeLocation;
   description: string;
   distance: number;

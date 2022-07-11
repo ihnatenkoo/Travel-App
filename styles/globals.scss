@@ -7,6 +7,10 @@
   --white: #e8e8e8;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -52,7 +56,7 @@ button {
 
 .main-container {
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 0 7px;
   width: 767px;
   max-width: 100%;
   min-height: 100vh;
