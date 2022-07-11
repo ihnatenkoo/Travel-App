@@ -16,18 +16,18 @@ const Home: NextPage<IHome> = ({ initialPlaces }) => {
 
   return (
     <MainLayout>
-      <SearchPanel setPlaces={setPlaces} initialPlaces={initialPlaces} places={places} />
+      <SearchPanel setPlaces={setPlaces} initialPlaces={initialPlaces} />
       <PopularPlaces places={places} />
     </MainLayout>
   );
 };
 
-export const getServerSideProps = async () => {
-  const { data } = await axios.get(`${API_URL}/places`);
+export const getStaticProps: GetStaticProps = async () => {
+  const { data: places } = await axios.get(`${API_URL}/places`);
 
   return {
     props: {
-      initialPlaces: data
+      initialPlaces: places
     }
   };
 };

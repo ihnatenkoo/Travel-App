@@ -8,7 +8,7 @@ interface IMainLayout {
 const MainLayout: FC<IMainLayout> = ({ children }) => {
   return (
     <main className="main-container">
-      <div className="content-container">{children}</div>
+      {children}
       <Footer />
     </main>
   );
