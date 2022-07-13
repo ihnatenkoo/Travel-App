@@ -11,6 +11,7 @@ export const places: Array<IPlace> = [
     },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 300,
+    duration: 4,
     image: `${process.env.NEXT_PUBLIC_URL}/images/places/Ukraine/kyiv.jpg`,
     rating: 10
   },
@@ -22,6 +23,7 @@ export const places: Array<IPlace> = [
     },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 1550,
+    duration: 10,
     image: `${process.env.NEXT_PUBLIC_URL}/images/places/Japan/tokyo.jpg`,
     rating: 8
   },
@@ -33,6 +35,7 @@ export const places: Array<IPlace> = [
     },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 7200,
+    duration: 12,
     image: `${process.env.NEXT_PUBLIC_URL}/images/places/USA/new-york.jpg`,
     rating: 9
   },
@@ -44,6 +47,7 @@ export const places: Array<IPlace> = [
     },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 3350,
+    duration: 7,
     image: `${process.env.NEXT_PUBLIC_URL}/images/places/Italy/rome.jpg`,
     rating: 8
   },
@@ -55,6 +59,7 @@ export const places: Array<IPlace> = [
     },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 3350,
+    duration: 7,
     image: `${process.env.NEXT_PUBLIC_URL}/images/places/Italy/milan.jpg`,
     rating: 8
   }

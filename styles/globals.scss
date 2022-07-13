@@ -5,6 +5,8 @@
   --accent: #eb601e;
   --gray: #807e7f;
   --white: #e8e8e8;
+  --black: #000000;
+  --gold: #ffd700;
 }
 
 * {
@@ -16,6 +18,8 @@ body {
   padding: 0;
   margin: 0 auto;
   font-family: 'Roboto Serif', serif;
+  font-size: 17px;
+  font-weight: 400;
 
   color: var(--white);
   overflow-y: scroll;
@@ -56,7 +60,7 @@ button {
 
 .main-container {
   margin: 0 auto;
-  padding: 0 7px;
+  padding: 0 7px 100px;
   width: 767px;
   max-width: 100%;
   min-height: 100vh;
