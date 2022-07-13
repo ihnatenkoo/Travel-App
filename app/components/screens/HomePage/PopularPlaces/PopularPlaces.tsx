@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import { IPlace } from '../../../../interfaces/place';
+import Card from '../../../elements/Card/Card';
 
 import s from './PopularPlaces.module.scss';
 
@@ -17,18 +18,7 @@ const PopularPlaces: FC<IPopularPlacesProps> = ({ places }) => {
         {places.length === 0 && <div className={s.places__card}>NOT FOUND</div>}
 
         {places.map((place) => (
-          <div key={place.name} className={s.places__card}>
-            <Link href={`/place/${place.name}`}>
-              <a>
-                <div className={s.places__card__image}>
-                  <Image src={place.image} alt={place.name} layout="fill" objectFit="cover" />
-                </div>
-              </a>
-            </Link>
-            <h3 className={s.places__card__title}>
-              {`${place.location.city}, ${place.location.country}`}
-            </h3>
-          </div>
+          <Card place={place} key={place.name} />
         ))}
       </div>
     </section>
