@@ -11,7 +11,7 @@ export const places: Array<IPlace> = [
     },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 300,
-    image: 'http://localhost:3000/images/places/Ukraine/kyiv.jpg',
+    image: `${process.env.NEXT_PUBLIC_URL}/images/places/Ukraine/kyiv.jpg`,
     rating: 10
   },
   {
@@ -22,7 +22,7 @@ export const places: Array<IPlace> = [
     },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 1550,
-    image: 'http://localhost:3000/images/places/Japan/tokyo.jpg',
+    image: `${process.env.NEXT_PUBLIC_URL}/images/places/Japan/tokyo.jpg`,
     rating: 8
   },
   {
@@ -33,7 +33,7 @@ export const places: Array<IPlace> = [
     },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 7200,
-    image: 'http://localhost:3000/images/places/USA/new-york.jpg',
+    image: `${process.env.NEXT_PUBLIC_URL}/images/places/USA/new-york.jpg`,
     rating: 9
   },
   {
@@ -44,7 +44,7 @@ export const places: Array<IPlace> = [
     },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 3350,
-    image: 'http://localhost:3000/images/places/Italy/rome.jpg',
+    image: `${process.env.NEXT_PUBLIC_URL}/images/places/Italy/rome.jpg`,
     rating: 8
   },
   {
@@ -55,7 +55,7 @@ export const places: Array<IPlace> = [
     },
     description: 'lorem lorem lorem lorem lorem lorem',
     distance: 3350,
-    image: 'http://localhost:3000/images/places/Italy/milan.jpg',
+    image: `${process.env.NEXT_PUBLIC_URL}/images/places/Italy/milan.jpg`,
     rating: 8
   }
 ];
