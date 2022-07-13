@@ -1,7 +1,6 @@
 import { NextPage, GetServerSidePropsContext } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import MainLayout from '../../app/layouts/MainLayout';
-import { API_URL } from '../../app/constants';
 import { IPlace } from '../../app/interfaces/place';
 
 import axios from 'axios';
@@ -24,7 +23,9 @@ export const getServerSideProps = async ({ params }: GetServerSidePropsContext<P
   }
 
   try {
-    const { data: place } = await axios.get(`${API_URL}/place/${params.name}`);
+    const { data: place } = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/place/${params.name}`
+    );
 
     return {
       props: { place }

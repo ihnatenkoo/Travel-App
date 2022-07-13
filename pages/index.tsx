@@ -1,6 +1,5 @@
 import { NextPage, GetStaticProps } from 'next';
 import { IPlace } from '../app/interfaces/place';
-import { API_URL } from '../app/constants';
 import MainLayout from '../app/layouts/MainLayout';
 
 import axios from 'axios';
@@ -30,8 +29,10 @@ const Home: NextPage<IHomeProps> = ({ initialPlaces, filtersPopularCountries }) 
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const { data: initialPlaces } = await axios.get(`${API_URL}/place`);
-    const { data: filtersPopularCountries } = await axios.get(`${API_URL}/filtersPopularCountries`);
+    const { data: initialPlaces } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/place`);
+    const { data: filtersPopularCountries } = await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/filtersPopularCountries`
+    );
 
     return {
       props: {
