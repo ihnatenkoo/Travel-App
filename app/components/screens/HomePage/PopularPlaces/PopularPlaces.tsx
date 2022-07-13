@@ -18,7 +18,7 @@ const PopularPlaces: FC<IPopularPlacesProps> = ({ places }) => {
 
         {places.map((place) => (
           <div key={place.name} className={s.places__card}>
-            <Link href={`/places/${place.name}`}>
+            <Link href={`/place/${place.name}`}>
               <a>
                 <div className={s.places__card__image}>
                   <Image src={place.image} alt={place.name} layout="fill" objectFit="cover" />

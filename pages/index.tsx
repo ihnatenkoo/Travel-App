@@ -30,7 +30,7 @@ const Home: NextPage<IHomeProps> = ({ initialPlaces, filtersPopularCountries }) 
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const { data: initialPlaces } = await axios.get(`${API_URL}/places`);
+    const { data: initialPlaces } = await axios.get(`${API_URL}/place`);
     const { data: filtersPopularCountries } = await axios.get(`${API_URL}/filtersPopularCountries`);
 
     return {
