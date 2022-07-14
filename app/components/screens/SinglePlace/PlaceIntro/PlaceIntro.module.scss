@@ -4,4 +4,11 @@
   width: calc(100% + 14px);
   margin-left: -7px;
   z-index: 1;
+
+  &__favorite {
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    z-index: 2;
+  }
 }
