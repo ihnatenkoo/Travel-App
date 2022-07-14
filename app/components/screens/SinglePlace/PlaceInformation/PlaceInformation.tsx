@@ -18,6 +18,9 @@ const PlaceInformation: FC<PlaceInformation> = ({
   city,
   country
 }) => {
+  const InfoDescription =
+    description.length < 750 ? description : description.slice(0, 750) + '...';
+
   return (
     <div className={s.info}>
       <div className={s.info__location}>
@@ -27,7 +30,7 @@ const PlaceInformation: FC<PlaceInformation> = ({
         </h2>
       </div>
 
-      <div className={s.info__description}>{description}</div>
+      <div className={s.info__description}>{InfoDescription}</div>
 
       <div className={s.info__feature}>
         <span className={cn(s.info__feature__item, s.info__feature__rating)}>

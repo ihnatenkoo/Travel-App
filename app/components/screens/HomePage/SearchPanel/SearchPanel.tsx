@@ -19,6 +19,12 @@ const SearchPanel: FC<ISearchPanelProps> = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('All');
 
+  const testKeyboard = (e: any) => {
+    if (e.key === 'Enter') {
+      setSearchTerm('');
+    }
+  };
+
   const searchHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
     const lowerCaseValue = e.target.value.toLowerCase();
@@ -94,6 +100,7 @@ const SearchPanel: FC<ISearchPanelProps> = ({
             value={searchTerm}
             className={s.search__input}
             onChange={searchHandler}
+            onKeyPress={testKeyboard}
           />
         </div>
 
