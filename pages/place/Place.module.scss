@@ -1,12 +1,4 @@
 .page {
-  &__img {
-    position: relative;
-    height: 450px;
-    width: calc(100% + 14px);
-    margin-left: -7px;
-    z-index: 1;
-  }
-
   &__info {
     margin: -100px auto 0;
     padding: 20px 20px 60px;
@@ -47,6 +39,7 @@
 }
 
 .description {
+  max-height: 360px;
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 20px;

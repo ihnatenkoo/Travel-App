@@ -1,54 +1,30 @@
 import { NextPage, GetServerSidePropsContext } from 'next';
-import Image from 'next/image';
 import { ParsedUrlQuery } from 'querystring';
 import MainLayout from '../../app/layouts/MainLayout';
 import { IPlace } from '../../app/interfaces/place';
+import PlaceIntro from '../../app/components/screens/SinglePlace/PlaceIntro/PlaceIntro';
+import PlaceInformation from '../../app/components/screens/SinglePlace/PlaceInformation/PlaceInformation';
 
-import cn from 'classnames';
-import s from './Place.module.scss';
 import axios from 'axios';
-
 interface IPlaceProps {
   place: IPlace;
 }
 
 const SinglePlace: NextPage<IPlaceProps> = ({ place }) => {
+  const { description, rating, duration } = place;
+  const { city } = place.location;
+  const { country } = place.location;
+
   return (
     <MainLayout>
-      <div className={s.page__img}>
-        <Image
-          src={place.image}
-          alt={`${place.location.city} image`}
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
-
-      <div className={s.page__info}>
-        <div className={s.location}>
-          <span className="material-icons-outlined">place</span>
-          <h2 className={s.title}>
-            {place.location.country}, {place.location.city}
-          </h2>
-        </div>
-
-        <div className={s.description}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate alias ut iusto,
-          dolorem a, ea praesentium dicta odio, adipisci laudantium beatae soluta facere unde
-          eligendi aspernatur! Blanditiis
-        </div>
-
-        <div className={s.feature}>
-          <span className={cn(s.feature__item, s.feature__rating)}>
-            <span className="material-icons-outlined">star</span>
-            {place.rating}/10
-          </span>
-          <span className={s.feature__item}>
-            <span className="material-icons-outlined">calendar_month</span>
-            {place.duration} days
-          </span>
-        </div>
-      </div>
+      <PlaceIntro image={place.image} city={city} />
+      <PlaceInformation
+        description={description}
+        rating={rating}
+        duration={duration}
+        city={city}
+        country={country}
+      />
     </MainLayout>
   );
 };
