@@ -4,6 +4,7 @@ import MainLayout from '../../app/layouts/MainLayout';
 import { IPlace } from '../../app/interfaces/place';
 import PlaceIntro from '../../app/components/screens/SinglePlace/PlaceIntro/PlaceIntro';
 import PlaceInformation from '../../app/components/screens/SinglePlace/PlaceInformation/PlaceInformation';
+import { Map } from '../../app/components/common/Map/Map';
 
 import axios from 'axios';
 import TripButton from '../../app/components/elements/TripButton/TripButton';
@@ -12,7 +13,7 @@ interface IPlaceProps {
 }
 
 const SinglePlace: NextPage<IPlaceProps> = ({ place }) => {
-  const { description, rating, duration } = place;
+  const { description, rating, duration, coordinates } = place;
   const { city } = place.location;
   const { country } = place.location;
 
@@ -26,6 +27,7 @@ const SinglePlace: NextPage<IPlaceProps> = ({ place }) => {
         city={city}
         country={country}
       />
+      <Map coordinates={coordinates} />
       <TripButton />
     </MainLayout>
   );

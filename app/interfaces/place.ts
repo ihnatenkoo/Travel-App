@@ -1,6 +1,7 @@
 export interface IPlace {
   name: string;
   location: TypeLocation;
+  coordinates: TypeCoordinates;
   description: string;
   distance: number;
   duration: number;
@@ -11,4 +12,9 @@ export interface IPlace {
 type TypeLocation = {
   city: string;
   country: string;
+};
+
+type TypeCoordinates = {
+  lat: number;
+  lng: number;
 };
