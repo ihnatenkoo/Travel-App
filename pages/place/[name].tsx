@@ -6,6 +6,7 @@ import PlaceIntro from '../../app/components/screens/SinglePlace/PlaceIntro/Plac
 import PlaceInformation from '../../app/components/screens/SinglePlace/PlaceInformation/PlaceInformation';
 
 import axios from 'axios';
+import TripButton from '../../app/components/elements/TripButton/TripButton';
 interface IPlaceProps {
   place: IPlace;
 }
@@ -25,6 +26,7 @@ const SinglePlace: NextPage<IPlaceProps> = ({ place }) => {
         city={city}
         country={country}
       />
+      <TripButton />
     </MainLayout>
   );
 };
