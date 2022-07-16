@@ -58,12 +58,12 @@
     }
 
     &.close {
-      opacity: 0;
+      display: none;
       right: 15px;
       transition: all 0.15s linear;
 
       &.active {
-        opacity: 1;
+        display: block;
       }
     }
   }

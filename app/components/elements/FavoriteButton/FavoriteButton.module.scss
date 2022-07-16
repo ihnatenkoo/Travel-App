@@ -1,5 +1,7 @@
+@import '../../../../styles/mixins.scss';
+
 .button {
-  background-color: rgba(48, 48, 48, 0.5);
+  @include glass;
   border-radius: 50%;
 
   width: 60px;

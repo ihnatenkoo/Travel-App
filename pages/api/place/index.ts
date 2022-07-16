@@ -82,11 +82,45 @@ export const places: Array<IPlace> = [
       lng: 9.189982
     },
     description:
-      'Milan is a city in northern Italy, capital of Lombardy regional area of the Italian Lakes and the second-most populous city proper in Italy after Rome. The city proper has a population of about 1.4 million,[6] while its metropolitan city has 3.26 million inhabitants.',
+      'Milan is a city in northern Italy, capital of Lombardy regional area of the Italian Lakes and the second-most populous city proper in Italy after Rome. The city proper has a population of about 1.4 million, while its metropolitan city has 3.26 million inhabitants.',
     distance: 3350,
     duration: 7,
     image: `${process.env.NEXT_PUBLIC_URL}/images/places/Italy/milan.jpg`,
     rating: 8
+  },
+  {
+    name: 'lviv',
+    location: {
+      city: 'Lviv',
+      country: 'Ukraine'
+    },
+    coordinates: {
+      lat: 49.841893,
+      lng: 24.031724
+    },
+    description:
+      'Lviv is the largest city in Western Ukraine, and the sixth-largest in Ukraine, with a population of 717,510 (2021 est.). Lviv is one of the main cultural centres of Ukraine. It was named in honour of Leo, the eldest son of Daniel, King of Ruthenia. Lviv serves as the administrative centre of Lviv Oblast and Lviv Raion and had the status of city of oblast significance before that designation was abolished in 2020.[6] It has the administration of Lviv urban hromada, one of the hromadas of Ukraine. The historical heart of the city, with its old buildings and cobblestone streets, survived Soviet and German occupations during World War II largely unscathed.',
+    distance: 750,
+    duration: 7,
+    image: `${process.env.NEXT_PUBLIC_URL}/images/places/Ukraine/lviv.jpg`,
+    rating: 10
+  },
+  {
+    name: 'london',
+    location: {
+      city: 'London',
+      country: 'United Kingdom'
+    },
+    coordinates: {
+      lat: 51.507386,
+      lng: -0.127895
+    },
+    description:
+      'London is the capital and largest city of England and the United Kingdom, with a population of just over 9 million.It stands on the River Thames in south-east England at the head of a 50-mile (80 km) estuary down to the North Sea, and has been a major settlement for two millennia.The City of London, its ancient core and financial centre, was founded by the Romans as Londinium and retains boundaries close to its medieval ones. London diverse cultures encompass over 300 languages.[26] The mid-2018 population of Greater London of about 9 million made it Europe third-most populous city.',
+    distance: 5750,
+    duration: 12,
+    image: `${process.env.NEXT_PUBLIC_URL}/images/places/United-Kingdom/london.jpg`,
+    rating: 9
   }
 ];
 

@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useEffect, useState } from 'react';
+import { ChangeEvent, FC, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { IFiltersPopularCountries, TypeSetState } from '../../../../interfaces/common';
 import { IPlace } from '../../../../interfaces/place';
@@ -19,9 +19,11 @@ const SearchPanel: FC<ISearchPanelProps> = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('All');
 
-  const testKeyboard = (e: any) => {
+  const input = useRef<HTMLInputElement>(null);
+
+  const testKeyboard = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      setSearchTerm('');
+      input.current?.blur();
     }
   };
 
@@ -94,6 +96,7 @@ const SearchPanel: FC<ISearchPanelProps> = ({
           </span>
 
           <input
+            ref={input}
             type="text"
             name="search-query"
             placeholder="Search place..."

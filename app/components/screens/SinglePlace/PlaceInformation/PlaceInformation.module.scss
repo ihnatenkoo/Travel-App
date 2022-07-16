@@ -1,25 +1,16 @@
+@import '../../../../../styles/mixins.scss';
+
 .info {
-  margin: -100px auto 50px;
-  padding: 20px 20px 60px;
+  @include glass;
+
+  margin: -100px auto 30px;
+  padding: 20px;
   width: 400px;
   max-width: 100%;
+  border-radius: 20px;
 
   position: relative;
   z-index: 2;
-
-  &::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-    filter: blur(3px);
-    background-color: rgba(48, 48, 48, 0.75);
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
 
   &__location {
     margin-bottom: 10px;
