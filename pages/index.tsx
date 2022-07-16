@@ -1,12 +1,12 @@
 import { NextPage, GetStaticProps } from 'next';
 import { IPlace } from '../app/interfaces/place';
 import MainLayout from '../app/layouts/MainLayout';
-
-import axios from 'axios';
 import SearchPanel from '../app/components/screens/HomePage/SearchPanel/SearchPanel';
 import PopularPlaces from '../app/components/screens/HomePage/PopularPlaces/PopularPlaces';
 import { useState } from 'react';
 import { IFiltersPopularCountries } from '../app/interfaces/common';
+
+import axios from 'axios';
 interface IHomeProps {
   initialPlaces: Array<IPlace>;
   filtersPopularCountries: Array<IFiltersPopularCountries>;
