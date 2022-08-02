@@ -14,7 +14,7 @@ const FavoriteButton: FC<ButtonProps> = ({ className }) => {
       className={cn(s.button, className, { [s.fill]: active })}
       onClick={() => setActive((prev) => !prev)}
     >
-      <span className="material-icons-outlined">{active ? 'favorite' : 'favorite_border'}</span>
+      <span className="material-icons-outlined">favorite</span>
     </button>
   );
 };

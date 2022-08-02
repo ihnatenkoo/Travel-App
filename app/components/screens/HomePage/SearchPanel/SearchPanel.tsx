@@ -21,7 +21,7 @@ const SearchPanel: FC<ISearchPanelProps> = ({
 
   const input = useRef<HTMLInputElement>(null);
 
-  const testKeyboard = (e: KeyboardEvent<HTMLInputElement>) => {
+  const inputBlur = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       input.current?.blur();
     }
@@ -29,7 +29,7 @@ const SearchPanel: FC<ISearchPanelProps> = ({
 
   const searchHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
-    const lowerCaseValue = e.target.value.toLowerCase();
+    const lowerCaseValue = e.target.value.toLowerCase().trim();
 
     const places = initialPlaces.filter((elem) => {
       if (filter === 'All') {
@@ -103,7 +103,7 @@ const SearchPanel: FC<ISearchPanelProps> = ({
             value={searchTerm}
             className={s.search__input}
             onChange={searchHandler}
-            onKeyPress={testKeyboard}
+            onKeyPress={inputBlur}
           />
         </div>
 

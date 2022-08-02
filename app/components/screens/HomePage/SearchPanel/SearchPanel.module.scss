@@ -29,16 +29,21 @@
 .search {
   position: relative;
   margin-bottom: 20px;
-  height: 40px;
+  height: 45px;
 
   background-color: #333333;
   border-radius: 12px;
   overflow: hidden;
 
+  display: flex;
+  align-items: center;
+
   &__input {
-    padding: 12px 7px 12px 45px;
+    padding-left: 45px;
     width: 100%;
+    height: inherit;
     background-color: inherit;
+    font-size: 17px;
     color: var(--white);
     cursor: pointer;
 
@@ -49,7 +54,7 @@
 
   &__icon {
     position: absolute;
-    top: 8px;
+    top: 11px;
     cursor: pointer;
     user-select: none;
 
@@ -60,9 +65,9 @@
     &.close {
       display: none;
       right: 15px;
-      transition: all 0.15s linear;
 
       &.active {
+        animation: in 0.6s;
         display: block;
       }
     }
@@ -93,5 +98,17 @@
     &.active {
       border: 1px solid var(--accent);
     }
+  }
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+    right: 0;
+  }
+
+  to {
+    opacity: 1;
+    right: 15px;
   }
 }

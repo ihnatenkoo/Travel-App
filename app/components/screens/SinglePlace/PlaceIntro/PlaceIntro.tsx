@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Image from 'next/image';
 
 import s from './PlaceIntro.module.scss';
-import FavoriteButton from '../../../elements/FavoriteButton/FavouriteButton';
+import FavoriteButton from '../../../elements/FavoriteButton/FavoriteButton';
 
 interface IPlaceIntroProps {
   image: string;
