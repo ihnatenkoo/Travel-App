@@ -7,8 +7,8 @@ const filtersPopularCountries = [
   { location: 'Ukraine' },
   { location: 'Italy' },
   { location: 'Japan' },
-  { location: 'USA' },
-  { location: 'United Kingdom' }
+  { location: 'United States' },
+  { location: 'United Kingdom' },
 ];
 
 export default function handler(

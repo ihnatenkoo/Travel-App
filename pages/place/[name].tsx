@@ -4,10 +4,11 @@ import MainLayout from '../../app/layouts/MainLayout';
 import { IPlace } from '../../app/interfaces/place';
 import PlaceIntro from '../../app/components/screens/SinglePlace/PlaceIntro/PlaceIntro';
 import PlaceInformation from '../../app/components/screens/SinglePlace/PlaceInformation/PlaceInformation';
-import { Map } from '../../app/components/common/Map/Map';
+import { Map } from '../../app/components/common/GoogleMap/GoogleMap';
 
 import axios from 'axios';
 import TripButton from '../../app/components/elements/TripButton/TripButton';
+import SimpleMap from '../../app/components/common/SimpleMap/SimpleMap';
 interface IPlaceProps {
   place: IPlace;
 }
@@ -27,6 +28,7 @@ const SinglePlace: NextPage<IPlaceProps> = ({ place }) => {
         city={city}
         country={country}
       />
+      <SimpleMap country={country} />
       <Map coordinates={coordinates} />
       <TripButton />
     </MainLayout>
@@ -38,7 +40,7 @@ export default SinglePlace;
 export const getServerSideProps = async ({ params }: GetServerSidePropsContext<ParsedUrlQuery>) => {
   if (!params) {
     return {
-      notFound: true
+      notFound: true,
     };
   }
 
@@ -48,11 +50,11 @@ export const getServerSideProps = async ({ params }: GetServerSidePropsContext<P
     );
 
     return {
-      props: { place }
+      props: { place },
     };
   } catch {
     return {
-      notFound: true
+      notFound: true,
     };
   }
 };

@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, KeyboardEvent, useEffect, useRef, useState } from 'react';
+import { ChangeEvent, FC, KeyboardEvent, useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { IFiltersPopularCountries, TypeSetState } from '../../../../interfaces/common';
 import { IPlace } from '../../../../interfaces/place';
@@ -14,7 +14,7 @@ interface ISearchPanelProps {
 const SearchPanel: FC<ISearchPanelProps> = ({
   setPlaces,
   initialPlaces,
-  filtersPopularCountries
+  filtersPopularCountries,
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('All');
@@ -54,14 +54,14 @@ const SearchPanel: FC<ISearchPanelProps> = ({
     filteredPlaces();
   };
 
-  const filteredPlaces = () => {
+  const filteredPlaces = useCallback(() => {
     if (filter === 'All') {
       setPlaces(initialPlaces);
       return;
     }
     const places = initialPlaces.filter((elem) => elem.location.country === filter);
     setPlaces(places);
-  };
+  }, [filter, initialPlaces, setPlaces]);
 
   const changeFilterHandler = (country: IFiltersPopularCountries) => {
     setFilter(country.location);
@@ -70,7 +70,7 @@ const SearchPanel: FC<ISearchPanelProps> = ({
 
   useEffect(() => {
     filteredPlaces();
-  }, [filter, initialPlaces]);
+  }, [filter, initialPlaces, filteredPlaces]);
 
   return (
     <section className={s.section}>
@@ -88,7 +88,7 @@ const SearchPanel: FC<ISearchPanelProps> = ({
           <span className={cn('material-icons-outlined', s.search__icon, s.find)}>search</span>
           <span
             className={cn('material-icons-outlined', s.search__icon, s.close, {
-              [s.active]: searchTerm
+              [s.active]: searchTerm,
             })}
             onClick={clearSearchButtonHandler}
           >
