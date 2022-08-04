@@ -13,19 +13,19 @@ const containerStyle = {
   margin: '0 auto',
   width: '400px',
   maxWidth: '100%',
-  height: '392px'
+  height: '392px',
 };
 
 const defaultOptions = {
   fullscreenControl: false,
   streetViewControl: false,
-  panControl: false
+  panControl: false,
 };
 
-export const Map: FC<IMapPRops> = ({ coordinates }) => {
+export const GMap: FC<IMapPRops> = ({ coordinates }) => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: String(process.env.NEXT_PUBLIC_MAPS_API_KEY)
+    googleMapsApiKey: String(process.env.NEXT_PUBLIC_MAPS_API_KEY),
   });
 
   const mapRef = useRef(undefined);

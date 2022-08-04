@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { IFiltersPopularCountries } from '../../app/interfaces/common';
+import { IFiltersPopularCountries } from '@/types/';
 
 const filtersPopularCountries = [
   { location: 'All' },

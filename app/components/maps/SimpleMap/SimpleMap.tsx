@@ -5,7 +5,7 @@ interface ISimpleMap {
   country: string;
 }
 
-const SimpleMap: FC<ISimpleMap> = ({ country }) => {
+export const SimpleMap: FC<ISimpleMap> = ({ country }) => {
   return (
     <div style={{ padding: '0 0' }}>
       <ComposableMap>
@@ -36,5 +36,3 @@ const SimpleMap: FC<ISimpleMap> = ({ country }) => {
     </div>
   );
 };
-
-export default SimpleMap;

@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import s from './TripButton.module.scss';
 
-const TripButton: FC = () => {
+export const TripButton: FC = () => {
   return (
     <div className={s.trip}>
       <button className={s.trip__button}>
@@ -14,4 +14,3 @@ const TripButton: FC = () => {
     </div>
   );
 };
-export default TripButton;

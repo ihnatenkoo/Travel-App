@@ -1,10 +1,8 @@
-import { NextPage, GetStaticProps } from 'next';
-import { IPlace } from '../app/interfaces/place';
-import MainLayout from '../app/layouts/MainLayout';
-import SearchPanel from '../app/components/screens/HomePage/SearchPanel/SearchPanel';
-import PopularPlaces from '../app/components/screens/HomePage/PopularPlaces/PopularPlaces';
 import { useState } from 'react';
-import { IFiltersPopularCountries } from '../app/interfaces/common';
+import { NextPage, GetStaticProps } from 'next';
+import MainLayout from '../app/layouts/MainLayout';
+import { IPlace, IFiltersPopularCountries } from '@/types/';
+import { SearchPanel, PopularPlaces } from '@/HomePage/index';
 
 import axios from 'axios';
 interface IHomeProps {
@@ -37,12 +35,12 @@ export const getStaticProps: GetStaticProps = async () => {
     return {
       props: {
         initialPlaces,
-        filtersPopularCountries
-      }
+        filtersPopularCountries,
+      },
     };
   } catch (error) {
     return {
-      notFound: true
+      notFound: true,
     };
   }
 };

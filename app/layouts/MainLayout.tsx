@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Footer from '../components/common/Footer/Footer';
+import { Footer } from '@/elements/index';
 
 interface IMainLayout {
   children: React.ReactNode;

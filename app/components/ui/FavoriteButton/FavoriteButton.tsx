@@ -6,7 +6,7 @@ import s from './FavoriteButton.module.scss';
 interface ButtonProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {}
 
-const FavoriteButton: FC<ButtonProps> = ({ className }) => {
+export const FavoriteButton: FC<ButtonProps> = ({ className }) => {
   const [active, setActive] = useState<boolean>(false);
 
   return (
@@ -18,4 +18,3 @@ const FavoriteButton: FC<ButtonProps> = ({ className }) => {
     </button>
   );
 };
-export default FavoriteButton;

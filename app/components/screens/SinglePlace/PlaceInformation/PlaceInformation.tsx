@@ -2,7 +2,6 @@ import { FC } from 'react';
 
 import cn from 'classnames';
 import s from './PlaceInformation.module.scss';
-
 interface PlaceInformation {
   description: string;
   rating: number;
@@ -11,12 +10,12 @@ interface PlaceInformation {
   country: string;
 }
 
-const PlaceInformation: FC<PlaceInformation> = ({
+export const PlaceInformation: FC<PlaceInformation> = ({
   description,
   rating,
   duration,
   city,
-  country
+  country,
 }) => {
   const InfoDescription =
     description.length < 750 ? description : description.slice(0, 750) + '...';
@@ -45,4 +44,3 @@ const PlaceInformation: FC<PlaceInformation> = ({
     </div>
   );
 };
-export default PlaceInformation;

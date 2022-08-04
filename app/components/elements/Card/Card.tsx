@@ -1,15 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { FC } from 'react';
-import { IPlace } from '../../../interfaces/place';
+import { IPlace } from '@/types/';
 
 import s from './Card.module.scss';
-
 interface ICardProps {
   place: IPlace;
 }
 
-const Card: FC<ICardProps> = ({ place }) => {
+export const Card: FC<ICardProps> = ({ place }) => {
   return (
     <div className={s.card}>
       <Link href={`/place/${place.name}`}>
@@ -23,4 +22,3 @@ const Card: FC<ICardProps> = ({ place }) => {
     </div>
   );
 };
-export default Card;

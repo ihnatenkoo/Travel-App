@@ -1,13 +1,13 @@
 import { FC } from 'react';
-import { IPlace } from '../../../../interfaces/place';
-import Card from '../../../elements/Card/Card';
+import { IPlace } from '@/types/';
+import { Card } from '@/elements/index';
 
 import s from './PopularPlaces.module.scss';
 interface IPopularPlacesProps {
   places: Array<IPlace>;
 }
 
-const PopularPlaces: FC<IPopularPlacesProps> = ({ places }) => {
+export const PopularPlaces: FC<IPopularPlacesProps> = ({ places }) => {
   return (
     <section className={s.places}>
       <h2 className={s.places__title}>Popular places</h2>
@@ -21,5 +21,3 @@ const PopularPlaces: FC<IPopularPlacesProps> = ({ places }) => {
     </section>
   );
 };
-
-export default PopularPlaces;

@@ -1,7 +1,6 @@
 import { ChangeEvent, FC, KeyboardEvent, useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { IFiltersPopularCountries, TypeSetState } from '../../../../interfaces/common';
-import { IPlace } from '../../../../interfaces/place';
+import { IPlace, IFiltersPopularCountries, TypeSetState } from '@/types/';
 
 import s from './SearchPanel.module.scss';
 import cn from 'classnames';
@@ -11,7 +10,7 @@ interface ISearchPanelProps {
   setPlaces: TypeSetState<Array<IPlace>>;
 }
 
-const SearchPanel: FC<ISearchPanelProps> = ({
+export const SearchPanel: FC<ISearchPanelProps> = ({
   setPlaces,
   initialPlaces,
   filtersPopularCountries,
@@ -122,5 +121,3 @@ const SearchPanel: FC<ISearchPanelProps> = ({
     </section>
   );
 };
-
-export default SearchPanel;
