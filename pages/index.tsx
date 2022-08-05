@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NextPage, GetStaticProps } from 'next';
+import Meta from 'utils/Meta';
 import MainLayout from '../app/layouts/MainLayout';
 import { IPlace, IFiltersPopularCountries } from '@/types/';
 import { SearchPanel, PopularPlaces } from '@/HomePage/index';
@@ -15,6 +16,10 @@ const Home: NextPage<IHomeProps> = ({ initialPlaces, filtersPopularCountries }) 
 
   return (
     <MainLayout>
+      <Meta
+        title="Book your trip"
+        description="Application for finding places for your vacation, book your vacation right now"
+      />
       <SearchPanel
         setPlaces={setPlaces}
         initialPlaces={initialPlaces}
