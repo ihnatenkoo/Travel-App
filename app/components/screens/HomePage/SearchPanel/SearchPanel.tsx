@@ -15,6 +15,7 @@ export const SearchPanel: FC<ISearchPanelProps> = ({
   initialPlaces,
   filtersPopularCountries,
 }) => {
+  console.log(filtersPopularCountries);
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('All');
 
@@ -113,7 +114,7 @@ export const SearchPanel: FC<ISearchPanelProps> = ({
               key={country.location}
               className={cn({ [s.active]: country.location === filter })}
             >
-              {country.location}
+              {country.name}
             </button>
           ))}
         </div>

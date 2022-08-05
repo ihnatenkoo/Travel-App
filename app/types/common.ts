@@ -4,4 +4,5 @@ export type TypeSetState<T> = Dispatch<SetStateAction<T>>;
 
 export interface IFiltersPopularCountries {
   location: string;
+  name: string;
 }
