@@ -7,14 +7,14 @@ interface ButtonProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {}
 
 export const FavoriteButton: FC<ButtonProps> = ({ className }) => {
-  const [active, setActive] = useState<boolean>(false);
+  const [isFav, setIsFav] = useState<boolean>(false);
 
   return (
     <button
-      className={cn(s.button, className, { [s.fill]: active })}
-      onClick={() => setActive((prev) => !prev)}
+      className={cn(s.button, className, { [s.fill]: isFav })}
+      onClick={() => setIsFav((prev) => !prev)}
     >
-      <span className="material-icons-outlined">favorite</span>
+      <span className="material-icons-outlined">{isFav ? 'favorite' : 'favorite_border'}</span>
     </button>
   );
 };

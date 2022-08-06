@@ -22,19 +22,17 @@ export const Footer: FC = () => {
   return (
     <footer className={s.footer}>
       <nav className={s.footer__nav}>
-        {navItems.map((item) => {
-          return (
-            <button
-              onClick={() => push(item.link)}
-              className={cn(s.button, {
-                [s.active]: pathname === item.link,
-              })}
-              key={item.icon}
-            >
-              <span className="material-icons-outlined">{item.icon}</span>
-            </button>
-          );
-        })}
+        {navItems.map((item) => (
+          <button
+            onClick={() => push(item.link)}
+            className={cn(s.button, {
+              [s.active]: pathname === item.link,
+            })}
+            key={item.icon}
+          >
+            <span className="material-icons-outlined">{item.icon}</span>
+          </button>
+        ))}
       </nav>
     </footer>
   );

@@ -15,7 +15,6 @@ export const SearchPanel: FC<ISearchPanelProps> = ({
   initialPlaces,
   filtersPopularCountries,
 }) => {
-  console.log(filtersPopularCountries);
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState('All');
 
