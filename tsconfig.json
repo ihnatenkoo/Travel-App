@@ -23,7 +23,8 @@
       "@/HomePage/*": ["components/screens/HomePage/"],
       "@/SinglePlace/*": ["components/screens/SinglePlace/"],
 
-      "@/types/*": ["types/index"]
+      "@/types/*": ["types/index"],
+      "@/utils/*": ["utils/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

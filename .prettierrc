@@ -1,0 +1,23 @@
+{
+	"trailingComma": "es5",
+	"tabWidth": 2,
+	"useTabs": true,
+	"semi": true,
+	"singleQuote": true,
+	"printWidth": 100,
+	"importOrder": [
+		"<THIRD_PARTY_MODULES>",
+		"^@/types/(.*)$",
+		"^@/utils/(.*)$",
+		"^@/components/(.*)$",
+		"^@/ui/(.*)$",
+		"^@/elements/(.*)$",
+		"^@/HomePage/(.*)$",
+		"^@/SinglePlace/(.*)$",
+		"^../(.*)",
+		"^./(.*)",
+		"(.scss)$"
+	],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
+}
